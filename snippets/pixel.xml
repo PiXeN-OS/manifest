@@ -6,6 +6,14 @@
           revision="pie"
           review="gerrit.pixelexperience.org" />
 
+  <remote name="pixen"
+          fetch="https://github.com/PiXeN-OS"
+          revision="pie" />
+
+  <remote name="pixenlab"
+          fetch="https://gitlab.com/drpradsms"
+          revision="pie" />
+
   <remote name="pixel-devices"
           fetch="https://github.com/PixelExperience-Devices"
           revision="pie" />
@@ -21,15 +29,15 @@
   <project path="hardware/qcom/audio-caf/sdm845" name="hardware_qcom_audio" revision="pie-caf-845" remote="pixel" />
   <project path="hardware/qcom/bt-caf" name="hardware_qcom_bt" revision="pie-caf" remote="pixel" />
   <project path="hardware/qcom/display-caf/msm8996" name="hardware_qcom_display" revision="pie-caf-8996" remote="pixel" />
-  <project path="hardware/qcom/display-caf/msm8998" name="hardware_qcom_display" revision="pie-caf-8998" remote="pixel" />
-  <project path="hardware/qcom/display-caf/sdm845" name="hardware_qcom_display" revision="pie-caf-845" remote="pixel" />
-  <project path="hardware/qcom/media-caf/sdm845" name="hardware_qcom_media" revision="pie-caf-845" remote="pixel" />
+  <project path="hardware/qcom/display-caf-msm8998" name="hardware_qcom_display-caf-msm8998" revision="pie" remote="pixen" />
+  <project path="hardware/qcom/audio-caf-msm8998" name="hardware_qcom_audio-caf-msm8998" revision="pie" remote="pixen" />
+  <project path="hardware/qcom/media-caf-msm8998" name="hardware_qcom_media-caf-msm8998" revision="pie" remote="pixen" />
   <project path="hardware/qcom/fm" name="hardware_qcom_fm" remote="pixel" />
   <project path="hardware/qcom/media" name="hardware_qcom_media" remote="pixel" />
   <project path="hardware/qcom/power" name="hardware_qcom_power" remote="pixel" />
   <project path="hardware/ril-caf" name="hardware_ril" revision="pie-caf" remote="pixel" />
   <project path="system/qcom" name="system_qcom" remote="pixel" />
-  <project path="vendor/codeaurora/telephony" name="vendor_codeaurora_telephony" remote="pixel" />
+  <project path="vendor/codeaurora/telephony" name="vendor_codeaurora_telephony" remote="pixen" />
   <project path="vendor/qcom/opensource/cryptfs_hw" name="vendor_qcom_opensource_cryptfs_hw" remote="pixel" />
 
   <!-- External repos -->
@@ -38,14 +46,15 @@
 
   <!-- Framework repos -->
   <project path="frameworks/av" name="frameworks_av" remote="pixel" />
-  <project path="frameworks/base" name="frameworks_base" remote="pixel" />
-  <project path="frameworks/native" name="frameworks_native" remote="pixel" />
+  <project path="frameworks/base" name="frameworks_base" remote="pixen" />
+  <project path="frameworks/native" name="frameworks_native" remote="pixen" />
   <project path="frameworks/opt/net/wifi" name="frameworks_opt_net_wifi" remote="pixel" />
-  <project path="frameworks/opt/telephony" name="frameworks_opt_telephony" remote="pixel" />
+  <project path="frameworks/opt/telephony" name="frameworks_opt_telephony" remote="pixen" />
+  <project path="frameworks/opt/net/ims" name="frameworks_opt_net_ims" remote="pixen" />
 
   <!-- General repos -->
   <project path="bionic" name="bionic" remote="pixel" />
-  <project path="build/make" name="build" remote="pixel">
+  <project path="build/make" name="build_make" remote="pixen">
     <copyfile src="core/root.mk" dest="Makefile" />
     <linkfile src="CleanSpec.mk" dest="build/CleanSpec.mk" />
     <linkfile src="buildspec.mk.default" dest="build/buildspec.mk.default" />
@@ -61,9 +70,9 @@
   <project path="build/kati" name="build_kati" remote="pixel" />
   <project path="bootable/recovery" name="bootable_recovery" remote="pixel" />
   <project path="device/custom/sepolicy" name="device_custom_sepolicy" remote="pixel" />
-  <project path="vendor/aosp" name="vendor_aosp" remote="pixel" />
+  <project path="vendor/aosp" name="vendor_aosp" remote="pixen" />
   <project path="vendor/gapps" name="vendor_gapps" remote="pixel-gitlab" clone-depth="1" />
-  <project path="vendor/pixelstyle" name="vendor_pixelstyle" remote="pixel" />
+  <project path="vendor/pixelstyle" name="vendor_pixelstyle" remote="pixenlab" />
 
   <!-- Hardware repos -->
   <project path="hardware/custom/interfaces" name="hardware_custom_interfaces" remote="pixel" />
@@ -77,25 +86,34 @@
   <project path="packages/apps/Camera2" name="packages_apps_Camera2" remote="pixel" />
   <project path="packages/apps/DocumentsUI" name="packages_apps_DocumentsUI" remote="pixel" />
   <project path="packages/apps/FMRadio" name="packages_apps_FMRadio" remote="pixel" />
-  <project path="packages/apps/Settings" name="packages_apps_Settings" remote="pixel" />
+  <project path="packages/apps/Settings" name="packages_apps_Settings" remote="pixen" />
+  <project path="packages/apps/NitrogenSettings" name="packages_apps_NitrogenSettings" remote="pixen" />
   <project path="packages/apps/SettingsIntelligence" name="packages_apps_SettingsIntelligence" remote="pixel" />
   <project path="packages/apps/Updates" name="packages_apps_Updates" remote="pixel" />
-  <project path="packages/apps/WallpapersBReel2017" name="packages_apps_WallpapersBReel2017" remote="pixel-gitlab" clone-depth="1" />
-  <project path="packages/apps/WallpapersBReel2018" name="packages_apps_WallpapersBReel2018" remote="pixel-gitlab" clone-depth="1" />
   <project path="packages/providers/DownloadProvider" name="packages_providers_DownloadProvider" remote="pixel" />
   <project path="packages/providers/MediaProvider" name="packages_providers_MediaProvider" remote="pixel" />
-  <project path="packages/services/Telecomm" name="packages_services_Telecomm" remote="pixel" />
-  <project path="packages/services/Telephony" name="packages_services_Telephony" remote="pixel" />
+  <project path="packages/services/Telecomm" name="packages_services_Telecomm" remote="pixen" />
+  <project path="packages/services/Telephony" name="packages_services_Telephony" remote="pixen" />
+  <project path="packages/services/OmniJaws" name="packages_services_OmniJaws" remote="pixen" />
+  <project path="packages/apps/OmniRecord" name="packages_apps_OmniRecord" remote="pixen" />
 
   <!-- Prebuilts -->
   <project path="prebuilts/clang/host/linux-x86" name="prebuilts_clang_host_linux-x86" remote="pixel" clone-depth="1" />
 
   <!-- System Repos -->
   <project path="system/bt" name="system_bt" remote="pixel" />
-  <project path="system/core" name="system_core" remote="pixel" />
+  <project path="system/core" name="system_core" remote="pixen" />
   <project path="system/extras" name="system_extras" remote="pixel" />
   <project path="system/netd" name="system_netd" remote="pixel" />
   <project path="system/sepolicy" name="system_sepolicy" remote="pixel" />
   <project path="system/vold" name="system_vold" remote="pixel" />
+
+  <!-- Device and Kernel -->
+  <project path="device/oneplus/msm8998-common" name="device_oneplus_msm8998-common" remote="pixen" />
+  <project path="device/oneplus/cheeseburger" name="device_oneplus_cheeseburger" remote="pixen" />
+  <project path="device/oppo/common" name="device_oppo_common" remote="pixen" />
+  <project path="vendor/oneplus" name="vendor_oneplus" remote="pixen" />
+  <project path="kernel/oneplus/msm8998" name="mTresk/android_kernel_oneplus_msm8998" remote="github" revision="8.1.0-unified-treble" />
+
 
 </manifest>
