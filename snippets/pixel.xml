@@ -45,10 +45,10 @@
   <project path="external/tinycompress" name="external_tinycompress" remote="pixel" />
 
   <!-- Framework repos -->
-  <project path="frameworks/av" name="frameworks_av" remote="pixel" />
+  <project path="frameworks/av" name="frameworks_av" remote="pixen" />
   <project path="frameworks/base" name="frameworks_base" remote="pixen" />
   <project path="frameworks/native" name="frameworks_native" remote="pixen" />
-  <project path="frameworks/opt/net/wifi" name="frameworks_opt_net_wifi" remote="pixel" />
+  <project path="frameworks/opt/net/wifi" name="frameworks_opt_net_wifi" remote="pixen" />
   <project path="frameworks/opt/telephony" name="frameworks_opt_telephony" remote="pixen" />
   <project path="frameworks/opt/net/ims" name="frameworks_opt_net_ims" remote="pixen" />
 
